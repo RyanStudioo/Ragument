@@ -1,0 +1,10 @@
+[project]
+name = "ragument"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "chromadb>=1.5.9",
+    "langchain>=1.4.5",
+    "langchain-chroma>=1.1.0",
+    "langchain-openai>=1.7.1",
+]
