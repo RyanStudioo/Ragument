@@ -7,4 +7,5 @@ dependencies = [
     "langchain>=1.4.5",
     "langchain-chroma>=1.1.0",
     "langchain-openai>=1.7.1",
+    "python-dotenv>=1.2.4",
 ]
