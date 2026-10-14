@@ -32,7 +32,7 @@ def parse_document(file_path: str | Path) -> Document:
         "file_name": path.name,
     }
 
-    return Document(page_content=body, metadata=metadata)
+    return Document(page_content=body, metadata=metadata, id=path.stem)
 
 
 def _split_front_matter(text: str, path: Path) -> tuple[dict[str, Any], str]:

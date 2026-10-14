@@ -54,6 +54,22 @@ def test_returns_langchain_document(tmp_path: Path) -> None:
     assert isinstance(doc, Document)
 
 
+def test_uses_file_name_without_extension_as_id(tmp_path: Path) -> None:
+    path = write_document(tmp_path, FRONT_MATTER_DOC, name="war-mechanics.md")
+
+    doc = parse_document(path)
+
+    assert doc.id == "war-mechanics"
+
+
+def test_uses_file_name_without_extension_as_id_for_plain_file(
+    tmp_path: Path,
+) -> None:
+    doc = parse_document(write_document(tmp_path, "Body.\n", name="notes.txt"))
+
+    assert doc.id == "notes"
+
+
 def test_source_and_file_name_metadata(tmp_path: Path) -> None:
     path = write_document(tmp_path, FRONT_MATTER_DOC, name="war-mechanics.md")
 
